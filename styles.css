@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #182153;
 }
 
@@ -36,6 +36,9 @@ h4{
 a{
   text-decoration: none;
   color: inherit;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .header{
@@ -72,6 +75,7 @@ nav li{
 
 .toggler{
   display: none;
+  cursor: pointer;
 }
 
 .toggler h2{
@@ -79,19 +83,43 @@ nav li{
   padding: 3%;
 }
 
-
 .header-navigation{
-  display: block;
+  position: absolute;
+  top: 2em;
+  right: 2%;
+  left: 0;
+}
+
+div.header-navigation ul{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
 }
 
 div.header-navigation ul li{
   color: white;
-  display: inline-block;
-  float: right;
-  background-color: #999;
   text-align: center;
-  padding: 1%;
-  box-sizing: border-box;
+  margin-right: 3%;
+  height: 100%;
+  overflow: visible;
+}
+
+div.header-navigation ul li a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em;
+  border: 2px solid rgba(0, 0, 0, 0);
+}
+
+#cv-download-text{
+  border: 2px solid white;
+  border-top-right-radius: 2em 2em;
+  border-top-left-radius: 2em 2em;
+  border-bottom-left-radius: 2em 2em;
+  border-bottom-right-radius: 2em 2em;
 }
 
 @media screen and (max-width: 750px) {
@@ -126,21 +154,40 @@ div.header-navigation ul li{
   background-size: cover;
   background-position: center;
   width: 100%;
-  height: 500px;
+  height: 30em;
+  position: relative;
 }
 
 .name-wrap{
   text-align: center;
-  margin: auto;
+  display: table;
+  width: 100%;
+  height: 90%;
+}
+
+.name-wrap-center{
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .name{
   font-size: 3em;
   color: white;
+  text-transform: uppercase;
+  margin: 2%;
+  font-weight: 100;
+}
+
+strong{
+  font-weight: bold;
 }
 
 .title{
-  font-size:
+  color: #cfcfcf;
+}
+
+.experience{
+
 }
 
 .elevator-pitch{
@@ -222,14 +269,23 @@ div.header-navigation ul li{
 }
 
 .stats-wrap{
-  margin: 10em 5em 6em;
+  padding: 10em 5% 6em;
   text-align: center;
+  background-image: url("assets/images/experience.jpg");
+  background-position: center;
+  background-size: cover;
 }
 
 .stat{
   display: inline-block;
-  width: 150px;
+  width: 10em;
   margin: 0 2% 5%;
+}
+
+@media screen and (max-width: 1120px) {
+  .stat{
+      margin: 0 0 5%;
+  }
 }
 
 .skills{
@@ -262,7 +318,7 @@ div.header-navigation ul li{
 }
 
 .skills-group1{
-  width: 35%;
+  width: 40%;
   min-width: 20em;
   display: inline-block;
   text-align: left;
@@ -270,7 +326,7 @@ div.header-navigation ul li{
 }
 
 .skills-group2{
-  width: 35%;
+  width: 40%;
   min-width: 20em;
   display: inline-block;
   text-align: left;
@@ -511,9 +567,6 @@ section.portfolio h2{
   display: inline-block;
 }
 
-.testimoner-centering{
-}
-
 div.testimoner-photo img{
   height: 6em;
   width: 6em;
@@ -525,6 +578,7 @@ div.testimoner-photo img{
   min-width: 15em;
   display: inline-block;
   text-align: left;
+  margin: 5%;
 }
 
 .testimony-content{
@@ -534,7 +588,24 @@ div.testimoner-photo img{
 }
 
 .testimony-visible{
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 850px) {
+  .testimony-visible{
+    display: block;
+  }
+  .testimoner{
+    display: inline-block;
+    width: 100%;
+  }
+  .testimony-text{
+    width: 100%;
+    text-align: center;
+    margin: 5% 0;
+  }
 }
 
 .testinonials-dots{
