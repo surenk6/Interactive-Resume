@@ -85,7 +85,7 @@ a{
   opacity: 1;
   padding-top: 0;
   padding-bottom: 0;
-  transition: opacity 100ms,
+  transition: opacity 300ms,
               padding-top 400ms,
               padding-bottom 400ms;
 }
@@ -205,11 +205,6 @@ div.header-navigation #cv-download-text{
     display: inline-block;
     margin: 0;
     font-weight: 700;
-  }
-  .toggler svg{
-    display: inline-block;
-    height: 2em;
-    width: 2em;
   }
   .toggler:hover{
     background-color: orange;
@@ -636,6 +631,7 @@ section.portfolio h2{
   min-width: 2em;
   position: absolute;
   left: 0;
+  transition: fill 300ms;
 }
 
 .testimonial-right{
@@ -644,6 +640,7 @@ section.portfolio h2{
   min-width: 2em;
   position: absolute;
   right: 0;
+  transition: fill 200ms;
 }
 
 .testimonial-arrows svg{
@@ -658,10 +655,12 @@ section.portfolio h2{
 
 .testimonial-left:hover{
   fill: orange;
+  transition: fill 200ms;
 }
 
 .testimonial-right:hover{
   fill: orange;
+  transition: fill 200ms;
 }
 
 .testimonial-wrap{
@@ -698,6 +697,7 @@ div.testimoner-photo img{
   top: -1em;
   opacity: 0.3;
   z-index: 0;
+  fill: orange;
 }
 
 .quote-right{
@@ -708,6 +708,7 @@ div.testimoner-photo img{
   bottom: -1em;
   opacity: 0.3;
   z-index: 0;
+  fill: orange;
 }
 
 .testimony-content{
