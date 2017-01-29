@@ -50,14 +50,52 @@ a{
   background-color: white;
   width: 100%;
   z-index: 2;
-  max-height: 0;
+  opacity: 0;
   overflow: hidden;
-  transition: max-height 700ms;
+  transition: ;
+  box-shadow: 0 1px 3px 0 #ddd;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  transition: padding-top 200ms,
+              padding-bottom 200ms,
+              opacity 200ms 200ms;
 }
 
-.navigation-invisible{
-  max-height: 20em;
-  transition: max-height 700ms;
+.navigation ul li{
+  overflow: visible;
+  padding: 0;
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+  margin-right: 3%;
+}
+
+.navigation ul li a{
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  padding: 0.5em;
+  border: 2px solid rgba(0, 0, 0, 0);
+}
+
+.navigation ul li a:hover{
+  color: orange;
+}
+
+.navigation-visible{
+  opacity: 1;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: opacity 100ms,
+              padding-top 400ms,
+              padding-bottom 400ms;
+}
+
+.navigation-element-onView{
+  color: orange;
+}
+
+nav{
+  margin-right: 2%;
 }
 
 nav ul{
@@ -67,9 +105,8 @@ nav ul{
 nav li{
   display: inline-block;
   float: right;
-  background-color: #999;
   text-align: center;
-  padding: 1%;
+  padding: 2%;
   box-sizing: border-box;
 }
 
@@ -99,7 +136,6 @@ div.header-navigation ul{
 }
 
 div.header-navigation ul li{
-  color: white;
   text-align: center;
   margin-right: 3%;
   height: 100%;
@@ -112,9 +148,14 @@ div.header-navigation ul li a{
   justify-content: center;
   padding: 0.5em;
   border: 2px solid rgba(0, 0, 0, 0);
+  color: white;
 }
 
-#cv-download-text{
+div.header-navigation ul li a:hover{
+  color: orange;
+}
+
+div.header-navigation #cv-download-text{
   border: 2px solid white;
   border-top-right-radius: 2em 2em;
   border-top-left-radius: 2em 2em;
@@ -122,7 +163,24 @@ div.header-navigation ul li a{
   border-bottom-right-radius: 2em 2em;
 }
 
+#cv-download-text{
+  border: 1.5px solid black;
+  border-top-right-radius: 2em 2em;
+  border-top-left-radius: 2em 2em;
+  border-bottom-left-radius: 2em 2em;
+  border-bottom-right-radius: 2em 2em;
+}
+
+#cv-download-text:hover{
+  background-color: orange;
+  border: 1.5px solid orange;
+  color: white;
+}
+
 @media screen and (max-width: 750px) {
+  nav{
+    margin: 0;
+  }
   nav ul{
     max-height: 0;
     overflow: hidden;
@@ -133,6 +191,12 @@ div.header-navigation ul li a{
   .toggler{
     display: block;
     height: 3.33em;
+    width: 100%;
+    box-shadow: 0 0 3px 0 #ddd;
+  }
+  .toggler:hover{
+    background-color: orange;
+    color: white;
   }
   .visible{
     max-height: 20em;
@@ -142,6 +206,21 @@ div.header-navigation ul li a{
   }
   .navigation{
     max-height: 20em;
+  }
+  .navigation ul li{
+    margin: 0;
+  }
+  .navigation ul li a{
+    border: none;
+  }
+  .navigation ul li a:hover{
+    background-color: orange;
+    box-shadow: 0 0 3px 0 #ddd;
+    color: white;
+  }
+  #cv-download-text{
+    border: 0px solid;
+    border-radius: 0;
   }
   .header-navigation{
     display: none;
@@ -528,7 +607,6 @@ section.portfolio h2{
 }
 
 .testimonial-left{
-  background-color: pink;
   width: 10%;
   height: 100%;
   min-width: 2em;
@@ -537,7 +615,6 @@ section.portfolio h2{
 }
 
 .testimonial-right{
-  background-color: red;
   width: 10%;
   height: 100%;
   min-width: 2em;
@@ -557,7 +634,6 @@ section.portfolio h2{
 
 .testimonial-wrap{
   display: inline-block;
-  background-color: blue;
   width: 80%;
 }
 
@@ -579,6 +655,27 @@ div.testimoner-photo img{
   display: inline-block;
   text-align: left;
   margin: 5%;
+  position: relative;
+}
+
+.quote-left{
+  position: absolute;
+  height: 3em;
+  width: 3em;
+  left: -1em;
+  top: -1em;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.quote-right{
+  position: absolute;
+  height: 3em;
+  width: 3em;
+  right: 0;
+  bottom: -1em;
+  opacity: 0.3;
+  z-index: 0;
 }
 
 .testimony-content{
@@ -623,12 +720,12 @@ div.testimoner-photo img{
   height: 1em;
   width: 1em;
   display: inline-block;
-  background-color: white;
+  background-color: #999;
   border-radius: 50%;
 }
 
 .testimonial-star-active{
-  background-color: green;
+  background-color: orange;
 }
 
 .contact{

@@ -51,13 +51,32 @@ $(document).ready(function(){
 
 
   /* wide screen nav bar appears when out of header section*/
-  $('.header').on('inview', function(event, isInView){
+  $('.header-navigation').on('inview', function(event, isInView){
     if (isInView == true) {
-      $('.navigation').removeClass('navigation-invisible');
+      $('.navigation').removeClass('navigation-visible');
     } else {
-      $('.navigation').addClass('navigation-invisible');
+      $('.navigation').addClass('navigation-visible');
     }
   })
+
+  /* highlights the navigation bar item
+  // on the section ofwhich you are on now*/
+
+  var sections = $("body").find('section')
+  var sectionIDs = [];
+  for (var i = 0; i < sections.length; i++) {
+    sectionIDs.push(sections[i].id);
+  }
+  console.log(sectionIDs)
+  var index = sectionIDs.indexOf('skills');
+        $(sections[index]).on('inview', function(event, isInView){
+          if (isInView == true) {
+            console.log('skills');
+            $('#nav-skills').css("color", "orange");
+          } else {
+            $('#nav-skills').css("color", "inherit");
+            console.log('no skills');
+        }})
 
 
 
