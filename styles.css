@@ -188,6 +188,10 @@ div.header-navigation #cv-download-text{
   nav ul li{
     width: 100%;
   }
+  nav ul li a{
+    box-sizing: border-box;
+    width: 100%;
+  }
   .toggler{
     height: 3.33em;
     width: 100%;
@@ -200,6 +204,7 @@ div.header-navigation #cv-download-text{
     justify-content: space-between;
     padding: 0 1.5em;
     box-sizing: border-box;
+    position: relative;
   }
   .toggler h2{
     display: inline-block;
@@ -232,12 +237,57 @@ div.header-navigation #cv-download-text{
     color: white;
   }
   #cv-download-text{
-    border: 0px solid;
+    border: 1.5px solid rgba(0,0,0,0);
     border-radius: 0;
+    box-shadow: none;
   }
   .header-navigation{
     display: none;
     overflow: hidden;
+  }
+  .nav-burger{
+    display: inline-block;
+    height: 1.8em;
+    width: 1.8em;
+    position: relative;
+  }
+  .nav-burger-item{
+    display: block;
+    background-color: black;
+    width: 100%;
+    border-radius: 5px;
+    position: absolute;
+    height: 0.25em;
+  }
+  .burger1{
+    top:0.25em;
+    left:0;
+    transition:
+      top 400ms,
+      transform 400ms;
+  }
+  .burger2{
+    top:0.75em;
+    left:0;
+    transition: opacity 400ms;
+  }
+  .burger3{
+    top:1.25em;
+    left:0;
+    transition:
+      top 400ms,
+      transform 400ms;
+  }
+  .burger1-clicked{
+    transform: rotate(45deg);
+    top: 40%;
+  }
+  .burger2-clicked{
+    opacity: 0;
+  }
+  .burger3-clicked{
+    transform: rotate(-45deg);
+    top: 40%;
   }
 }
 
@@ -551,6 +601,7 @@ section.portfolio h2{
   height: 15em;
   background-size: cover;
   background-position: center;
+  cursor: pointer;
 }
 
 .project-silde{
@@ -607,6 +658,93 @@ section.portfolio h2{
 
 #project6{
   background-image: url("assets/images/port (8).jpg");
+}
+
+.project-content{
+  position: fixed;
+  overflow: hidden;
+  opacity: 0;
+  display: block;
+  width: 0;
+  transition: opacity 400ms;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: 0 0 8px 0 #ddd;
+  box-sizing: border-box;
+  background-color: white;
+  margin: 3%;
+}
+
+.project-content-visible{
+  transition: opacity 400ms;
+  width: auto;
+  opacity: 1;
+}
+
+.content-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  clear: both;
+  box-shadow: 0 2px 5px 0 #ddd;
+  height: 8%;
+}
+
+.project-details{
+  display: inline-block;
+  float: left;
+  padding: 1em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.content-header-x{
+  display: inline-block;
+  float: right;
+  padding: 1em;
+  cursor: pointer;
+}
+
+.content-header-x svg{
+  height: 1em;
+  width: 1em;
+  display: block;
+}
+
+.content-wrap{
+  display: block;
+  overflow-y: scroll;
+  height: 84%;
+}
+
+.content-footer{
+  width: 100%;
+  box-shadow: 0 -2px 5px 0 #ddd;
+  bottom: 0;
+  left: 0;
+  display: inline-block;
+  clear: both;
+  position: absolute;
+  height: 8%;
+}
+
+.content-close-button{
+  display: inline-block;
+  margin: 0.5em;
+  border: 1px solid black;
+  border-radius: 0.4em;
+  cursor: pointer;
+}
+
+.close{
+  margin: 0;
+  padding: 0.5em 2em;
+  display: block;
+  text-transform: uppercase;
 }
 
 .recommendations{
