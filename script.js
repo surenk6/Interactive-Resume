@@ -7,6 +7,17 @@ $(document).ready(function(){
 
 
 
+  /* burger menu animation*/
+  $('.toggler').click(function(){
+    var burgers = $('.toggler').find('.nav-burger-item');
+    for (var i = 0; i < burgers.length; i++) {
+      var burgerIndex = "burger"+(i+1)+"-clicked";
+      $(burgers[i]).toggleClass(burgerIndex);
+    }
+  })
+
+  /* burger menu gets white when hovering over nav menu*/
+
   /* narrow screen menu open animation*/
   $(".toggler").click(function(){
     $("nav ul").toggleClass("visible")
@@ -97,5 +108,36 @@ $(document).ready(function(){
     $(this).find("span").css("opacity", "0");
   })
 
+
+
+  /* portfolio section opens content on click and closes on x and close button*/
+  var projects = $('.projects-wrap').find('.project');
+  var projectContents = $('.projects-wrap').find('.project-content');
+
+  $('#project1').click(function(){
+    $('#project-content1').toggleClass("project-content-visible");
+  })
+  $('#project2').click(function(){
+    $('#project-content2').toggleClass("project-content-visible");
+  })
+  $('#project3').click(function(){
+    $('#project-content3').toggleClass("project-content-visible");
+  })
+  $('#project4').click(function(){
+    $('#project-content4').toggleClass("project-content-visible");
+  })
+  $('#project5').click(function(){
+    $('#project-content5').toggleClass("project-content-visible");
+  })
+  $('#project6').click(function(){
+    $('#project-content6').toggleClass("project-content-visible");
+  })
+
+  $('.content-header-x').click(function(){
+    $('.projects-wrap').find('.project-content').removeClass("project-content-visible");
+  })
+  $('.content-close-button').click(function(){
+    $('.projects-wrap').find('.project-content').removeClass("project-content-visible");
+  })
     /* end*/
 })
