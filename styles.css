@@ -4,6 +4,12 @@ body {
   color: #182153;
 }
 
+body.no-scroll{
+    margin: 0;
+    height: 100%;
+    overflow:hidden;
+}
+
 h1{
   text-align: center;
   text-transform: uppercase;
@@ -52,7 +58,6 @@ a{
   z-index: 2;
   opacity: 0;
   overflow: hidden;
-  transition: ;
   box-shadow: 0 1px 3px 0 #ddd;
   padding-top: 1.5em;
   padding-bottom: 1.5em;
@@ -224,6 +229,8 @@ div.header-navigation #cv-download-text{
   }
   .navigation{
     max-height: 20em;
+    opacity: 1;
+    padding: 0;
   }
   .navigation ul li{
     margin: 0;
@@ -329,7 +336,6 @@ strong{
 }
 
 .experience{
-
 }
 
 .elevator-pitch{
@@ -545,6 +551,7 @@ section.portfolio h2{
   height: 15em;
   background-size: cover;
   background-position: center;
+  cursor: pointer;
 }
 
 .program-silde{
@@ -660,7 +667,7 @@ section.portfolio h2{
   background-image: url("assets/images/port (8).jpg");
 }
 
-.project-content{
+.portfolio-content{
   position: fixed;
   overflow: hidden;
   opacity: 0;
@@ -675,12 +682,11 @@ section.portfolio h2{
   box-shadow: 0 0 8px 0 #ddd;
   box-sizing: border-box;
   background-color: white;
-  margin: 3%;
 }
 
-.project-content-visible{
+.portfolio-content-visible{
   transition: opacity 400ms;
-  width: auto;
+  width: 100%;
   opacity: 1;
 }
 
@@ -804,12 +810,14 @@ section.portfolio h2{
 .testimonial-wrap{
   display: inline-block;
   width: 80%;
+  position: relative;
 }
 
 .testimoner{
   width: 25%;
   min-width: 10em;
   display: inline-block;
+  position: static;
 }
 
 div.testimoner-photo img{
@@ -852,13 +860,24 @@ div.testimoner-photo img{
 .testimony-content{
   text-align: center;
   margin: 5%;
-  display: none;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  transition: opacity 400ms;
 }
 
 .testimony-visible{
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 1;
+  transition: opacity 400ms 300ms;
+  overflow: visible;
+  position: static;
 }
 
 @media screen and (max-width: 850px) {
@@ -873,6 +892,9 @@ div.testimoner-photo img{
     width: 100%;
     text-align: center;
     margin: 5% 0;
+  }
+  .testimony-content{
+    display: block;
   }
 }
 
