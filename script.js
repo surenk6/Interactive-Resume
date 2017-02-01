@@ -6,7 +6,6 @@ $(document).ready(function(){
   });
 
 
-
   /* burger menu animation*/
   $('.toggler').click(function(){
     var burgers = $('.toggler').find('.nav-burger-item');
@@ -16,13 +15,18 @@ $(document).ready(function(){
     }
   })
 
+
   /* burger menu gets white when hovering over nav menu*/
+  $('.toggler').hover(function(){
+    $('.nav-burger-item').css('background-color','white');
+  }, function(){
+    $('.nav-burger-item').css('background-color','black');
+  })
 
   /* narrow screen menu open animation*/
   $(".toggler").click(function(){
     $("nav ul").toggleClass("visible")
   })
-
 
 
   /* testimony section arrow controls*/
@@ -60,7 +64,6 @@ $(document).ready(function(){
   })
 
 
-
   /* wide screen nav bar appears when out of header section*/
   $('.header-navigation').on('inview', function(event, isInView){
     if (isInView == true) {
@@ -69,6 +72,7 @@ $(document).ready(function(){
       $('.navigation').addClass('navigation-visible');
     }
   })
+
 
   /* highlights the navigation bar item
   // on the section ofwhich you are on now*/
@@ -111,33 +115,49 @@ $(document).ready(function(){
 
 
   /* portfolio section opens content on click and closes on x and close button*/
-  var projects = $('.projects-wrap').find('.project');
-  var projectContents = $('.projects-wrap').find('.project-content');
+  //var projects = $('.projects-wrap').find('.project');
+  //var projectContents = $('.projects-wrap').find('.portfolio-content');
 
+  $('#program1').click(function(){
+    $('#portfolio-content1').toggleClass("portfolio-content-visible");
+    $('body').addClass('no-scroll');
+  })
+  $('#program2').click(function(){
+    $('#portfolio-content2').toggleClass("portfolio-content-visible");
+    $('body').addClass('no-scroll');
+  })
   $('#project1').click(function(){
-    $('#project-content1').toggleClass("project-content-visible");
+    $('#portfolio-content3').toggleClass("portfolio-content-visible");
+    $('body').addClass('no-scroll');
   })
   $('#project2').click(function(){
-    $('#project-content2').toggleClass("project-content-visible");
+    $('#portfolio-content4').toggleClass("portfolio-content-visible");
+    $('body').addClass('no-scroll');
   })
   $('#project3').click(function(){
-    $('#project-content3').toggleClass("project-content-visible");
+    $('#portfolio-content5').toggleClass("portfolio-content-visible");
+    $('body').addClass('no-scroll');
   })
   $('#project4').click(function(){
-    $('#project-content4').toggleClass("project-content-visible");
+    $('#portfolio-content6').toggleClass("portfolio-content-visible");
+    $('body').addClass('no-scroll');
   })
   $('#project5').click(function(){
-    $('#project-content5').toggleClass("project-content-visible");
+    $('#portfolio-content7').toggleClass("portfolio-content-visible");
+    $('body').addClass('no-scroll');
   })
   $('#project6').click(function(){
-    $('#project-content6').toggleClass("project-content-visible");
+    $('#portfolio-content8').toggleClass("portfolio-content-visible");
+    $('body').addClass('no-scroll');
   })
 
   $('.content-header-x').click(function(){
-    $('.projects-wrap').find('.project-content').removeClass("project-content-visible");
+    $('.portfolio').find('.portfolio-content-visible').removeClass("portfolio-content-visible");
+    $('body').removeClass('no-scroll');
   })
   $('.content-close-button').click(function(){
-    $('.projects-wrap').find('.project-content').removeClass("project-content-visible");
+    $('.portfolio').find('.portfolio-content-visible').removeClass("portfolio-content-visible");
+    $('body').removeClass('no-scroll');
   })
     /* end*/
 })
